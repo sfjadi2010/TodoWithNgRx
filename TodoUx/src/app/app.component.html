@@ -1,6 +1,13 @@
 <h3>{{title}}</h3>
 
 
+<div>
+  <div>
+    <input #taskName />
+    <button (click)="addTask(taskName.value); taskName.value=''">Add Task</button>
+  </div>
+
+</div>
 <ul *ngIf="tasks.length > 0">
   <li *ngFor="let task of tasks">
     <a [routerLink]="['/task', task.id]">{{task.name}}</a>
